@@ -13,6 +13,7 @@ db:
 
 etherpad:
   image: tvelocity/etherpad-lite
+  container_name: etherpad
   environment:
     ETHERPAD_TITLE: "DCRL Etherpad"
     ETHERPAD_DB_PASSWORD: "something"
