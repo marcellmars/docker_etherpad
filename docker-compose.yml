@@ -14,8 +14,10 @@ db:
 etherpad:
   image: tvelocity/etherpad-lite
   environment:
+    ETHERPAD_TITLE: "DCRL Etherpad"
     ETHERPAD_DB_PASSWORD: "something"
     ETHERPAD_DB_USER: "admin"
+    ETHERPAD_ADMIN_PASSWORD: "something"
   links:
     - db:mysql
     
