@@ -1,0 +1,24 @@
+#-------------------------------------------------------------------------------
+#- pad subdomain running etherpad-lite
+
+server {
+        listen 80;
+        listen [::]:80;
+        listen 443 ssl spdy;
+        listen [::]:443 ssl spdy;
+
+        server_name   "pad.labinary.org";
+
+        ssl_certificate /etc/ssl/certs/pad.labinary.org.crt;
+        ssl_certificate_key /etc/ssl/private/par.labinary.org.key;
+
+        location / {
+                resolver 127.0.0.1;
+                proxy_pass        http://etherpad:9001;
+                
+                proxy_set_header  X-Real-IP  $remote_addr;
+                proxy_set_header  Host $host;
+                proxy_redirect http:// https://;
+
+        }
+}
