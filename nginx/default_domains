@@ -10,7 +10,7 @@ server {
         server_name   "pad.labinary.org";
 
         ssl_certificate /etc/ssl/certs/pad.labinary.org.crt;
-        ssl_certificate_key /etc/ssl/private/par.labinary.org.key;
+        ssl_certificate_key /etc/ssl/private/pad.labinary.org.key;
 
         location / {
                 resolver 127.0.0.1;
